@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid</title>
+
+    <style>
+        .container {
+            display: inline-grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: 100px 100px 100px;
+            text-align: center;
+            line-height: 100px;
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+        }
+
+        .container div:nth-of-type(2n) {
+            background: red;
+            color: #fff;
+        }
+
+        .container div:nth-of-type(2n+1) {
+            background: yellow;
+            color: #157441;
+        }
+
+        .container_02 {
+            margin-top: 20px;
+            width: 300px;
+            display: grid;
+            grid-template-columns: 150px 1fr 2fr;
+        }
+
+        .container_02 div:nth-of-type(2n) {
+            background: red;
+            color: #fff;
+        }
+
+        .container_02 div:nth-of-type(2n+1) {
+            background: yellow;
+            color: #151515;
+        }
+
+        .container_03 {
+            display: grid;
+            grid-template-rows: 100px;
+            grid-template-columns: 2fr 50px 1fr;
+            place-items: center center;
+        }
+
+        .header {
+            margin-top: 20px;
+            background: red;
+            height: 50px;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            background: yellow;
+            color: red;
+        }
+
+        .aside {
+            width: 100%;
+            height: 100%;
+            background: yellow;
+            color: red;
+        }
+
+        .footer {
+            background: purple;
+            color: #fff;
+        }
+
+        .container_05 {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: repeat(10, 1fr);
+        }
+
+        .aside {
+            grid-area: 1 / 1 / end / 1;
+        }
+
+       .header_05 {
+            grid-area: 1 / 2 / 3 / end;
+            width: 100%;
+            height: 100%;
+            background: blueviolet;
+            color: red;
+        }
+
+        .main_05 {
+            grid-area: 3 / 2 / end / end;
+            width: 100%;
+            height: 100%;
+            background: yellowgreen;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+    <div class="container_02">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+    <div class="header">header</div>
+    <div class="container_03">
+        <div class="main">main</div>
+        <div></div>
+        <div class="aside">aside</div>
+    </div>
+    <div class="footer">footer</div>
+
+    <div class="container_05">
+        <div class="aside">aside</div>
+        <div class="header_05">header</div>
+        <div class="main_05">main</div>
+    </div>
+
+</body>
+
+</html>
